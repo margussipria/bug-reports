@@ -1,1 +1,1 @@
-addSbtPlugin("com.frugalmechanic" % "fm-sbt-s3-resolver" % "0.14.0")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.12")

@@ -1,7 +1,16 @@
+scalaVersion := "2.12.4"
+
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala)
+  //.enablePlugins(PlayNettyServer)
+  //.disablePlugins(PlayAkkaHttpServer)
+
 resolvers ++= Seq(
-  "Custom Releases" at "s3://maven.custom/releases/"
 )
 
 libraryDependencies ++= Seq(
-  "javax.ws.rs" % "javax.ws.rs-api" % "2.1" artifacts Artifact("javax.ws.rs-api", "", "jar")
+  guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
 )
+
+routesGenerator := InjectedRoutesGenerator
